@@ -1,0 +1,190 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+
+header{
+    width: 100%;
+    height: 80px;
+    background-color:black ;
+}
+
+#nomeLoja{
+    color: white;
+    text-align: center;
+}
+
+nav{
+    background-image: linear-gradient(to right, blue,darkblue);
+   padding: 10px;
+    margin-bottom: 10px;
+}
+
+nav a{
+    padding: 10px;
+    color: black;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+nav a:hover{
+    color: beige;
+    text-decoration: none;
+}
+
+.btnDrop{
+    position: relative;
+    top: -2px;
+    background-color: blue;
+    border: none;
+    font-size: 18px;
+}
+.btnDrop:hover{
+    color: beige;
+}
+
+.dropa a{
+    color: black;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+main{
+    width: 80%;
+    margin: 0px auto;
+    border-radius:10px ;
+    background-color: azure;
+}
+
+h5{
+    color: rgba(0, 0, 0, 0.9);
+    margin-top: 10px;
+}
+h5 p{
+    color: rgba(0, 0, 0, 0.5);
+    display: inline-block;
+}
+
+
+#divRow{
+    margin-left:5%;
+    margin-bottom: 10px;
+}
+
+
+#produto{
+    
+    border: 1px solid black;
+    width: 170px;
+    border-radius: 10px;
+    background-color: white;
+   min-height: 100%;
+    text-align: center;
+    display: inline-block;
+    
+}
+#produto h5{
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#produto h4{
+    color: orange;
+    font-weight: bold;
+    text-align: center;
+}
+#produto input{
+    width: 75%;
+    height: 20px;
+    margin-bottom: 5px;
+}
+#produto button{
+    cursor: pointer;
+    margin-bottom: 5px;
+    font-weight: bold;
+    background-image: linear-gradient(to right, blue , darkblue);
+}
+#produto button:hover{
+    color: white;
+}
+
+@media screen and (max-width:991px) {
+    #divRow{
+        margin-left:-1%;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width:915px) {
+    #divRow{
+        margin-left:25%;
+        margin-bottom: 2px;
+    }
+    #produto{
+        border: 1px solid black;
+        width: 170px;
+        border-radius: 10px;
+        background-color: white;
+        max-height: 100%;
+        text-align: center;
+        display: inline-block;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width:770px) {
+    #divRow{
+        margin-left:20%;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width:665px) {
+    #divRow{
+        margin-left:15%;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width:550px) {
+    #divRow{
+        margin-left:25%;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width:420px) {
+    #divRow{
+        margin-left:20%;
+        margin-bottom: 10px;
+    }
+}
+@media screen and (max-width:330px) {
+    #divRow{
+        margin-left:14%;
+        margin-bottom: 10px;
+    }
+}
+
+
+
+
+footer{
+    width: 100%;
+    height: 250px;
+    background-color: black;
+    color: white;
+    padding: 10px;
+ 
+}
+#informacoes1{
+    width: 45%;
+    border: 1px solid white;
+    display: inline-block;
+    text-align: center;
+}
+
+#informacoes2{
+    width: 45%;
+    border: 1px solid white;
+    display: inline-block;
+    text-align: center;
+   
+}
