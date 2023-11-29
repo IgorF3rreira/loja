@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- FONTAWESOME LINK -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="src/css/style.css">
+
+    <title>Teclado</title>
+</head>
+
+<body>
+
+    <header>
+        <h1 id="nomeLoja"> NOME DA LOJA </h1>
+      </header>
+    
+      <nav>
+        <a href="index.html">Home</a>
+        <div class="btn-group dropright">
+          <button type="button" class="dropdown-toggle btnDrop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           Produtos
+          </button>
+          <div class="dropdown-menu dropa">
+            <a href="#">Mouse</a> <br> <hr>
+            <a href="#">Processador</a> <br>  <hr>
+            <a href="#">Monitor</a> <br> <hr>
+            <a href="#">Notbooks</a> <br> <hr>
+            <a href="#">PC</a> <br> 
+          </div>
+        </div>
+    
+        <a id="carrinhoA"  href="#carrinho" role="button" data-toggle="modal"><i class="fa-solid fa-cart-shopping"></i></a>
+      </nav> 
+
+
+        <!-- Modal ao Adicionar ao Carrinho -->
+    <div class="modal fade bg-light" id="carrinho" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog " role="document">
+          <div class="modal-content bg-dark  ">
+            <div class="modal-header alert alert-success bg-dark ">
+              <h5 class="modal-title text-light" id="exampleModalLabel ">Seu carrinho</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+  
+              <table id="tabelaCarrinho" class="table table-striped table-responsive table-hover bg-light">
+    
+  
+   
+              </table>
+  
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary bg-light text-dark" data-dismiss="modal">Fechar</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <main >
+
+      <h5> <p> Home </p> > Teclado</h5>
+
+      <div  class="container ">
+        <div id="divRow" >
+      
+          <div id="produto">
+            <img src="src/img/tecladoBrx.jpg" width="41%" alt="">
+            <h5>TECLADO MECANICO GAMER BRX M403, RGB, ABNT, SWITCH AZUL, PRETO, TGBRXRGB-M403</h5>
+            <h4 class="valorMouseRed">R$ 129,99 <hr></h4> 
+            <input type="number" class="tecladoBrx" name="tecladoBrx" >
+            <button  class="tecladoBrx"  name="btn" id="btn">COMPRAR</button>
+          </div> 
+  
+          <div id="produto">
+            <img src="src/img/mouseHyperx.jpg" width="51%" alt="">
+            <h5>Mouse Sem Fio Gamer HyperX Pulsefire Dart, RGB, 16000DPI - HX-MC006B</h5>
+            <h4 class="valorMouseHyper">R$ 345,00 <hr></h4> 
+            <input type="number" name="mouseHyper" class="mouseHyper">
+            <button type="button" name="btn" class="mouseHyper" >COMPRAR</button>
+          </div>
+  
+          <div id="produto">
+            <img src="src/img/tecladoHyperx.jpg" width="40%" alt="">
+            <h5>Teclado Mecânico Gamer HyperX Alloy MKW100, RGB, Switch Red, Full Size, US, Preto - 4P5E1AA#ABA</h5>
+            <h4 class="valorTecladoHyper">R$ 269,99 <hr></h4> 
+            <input type="number" class="tecladoHyper" name="" id="">
+            <button type="button" class="tecladoHyper"  name="btn" id="btn">COMPRAR</button>
+          </div>
+  
+          <div id="produto">
+            <img src="src/img/tecladoHusky.jpg" width="40%" alt="">
+            <h5>Teclado Mecânico Gamer Husky Gaming Blizzard, 60%, RGB, Switch Gateron Red, ABNT2, Branco</h5>
+            <h4 class="valorTecladoHusky">R$ 189,99 <hr></h4> 
+            <input type="number" class="tecladoHusky" name="" id="">
+            <button type="button" class="tecladoHusky" name="btn" id="btn">COMPRAR</button>
+          </div>
+  
+          </div>
+  
+          <div id="divRow" >
+  
+          <div id="produto">
+            <img src="src/img/headsetHyperx.jpg" width="51%" alt="">
+            <h5>Headset Gamer HyperX Cloud Stinger 2, Drivers 50mm, P3, Preto - 519T1AA</h5>
+            <h4 class="valorHeadsetHyper">R$ 169,99 <hr></h4> 
+            <input type="number"  class="headsetHyper"  name="" id="">
+            <button type="button" class="headsetHyper" name="btn" id="btn">COMPRAR</button>
+          </div>
+  
+          <div id="produto">
+            <img src="src/img/headsetHyperx2.jpg" width="40%" alt="">
+            <h5>Headset Gamer HyperX Cloud II, Som Surround 7.1, Drivers 53mm, Preto e Vermelho - 4P5M0AA</h5>
+            <h4 class="valorHeadsetHyper2">R$ 269,99 <hr></h4> 
+            <input  type="number" class="headsetHyper2" name="" id="">
+            <button type="button" class="headsetHyper2" name="btn" id="btn">COMPRAR</button>
+          </div>
+  
+          <div id="produto">
+            <img src="src/img/microfoneHyperx.jpg" width="40%" alt="">
+            <h5>Microfone Gamer HyperX QuadCast S Podcast, Antivibração, LED RGB, USB - 4P5P7AA</h5>
+            <h4 class="valorMicrofoneHyper">R$ 649,99 <hr></h4> 
+            <input type="number" class="microfoneHyper" name="" id="">
+            <button type="button" class="microfoneHyper" name="btn" id="btn">COMPRAR</button>
+          </div>
+  
+          <div id="produto">
+            <img src="src/img/microfoneNox.jpg" width="51%" alt="">
+            <h5>Microfone Krom Nox Kapsule Podcast, USB, Mini Jack - NXKROMKPSL </h5>
+            <h4 class="valorMicrofoneKrom">R$ 219,99 <hr></h4> 
+            <input type="number" class="microfoneKrom" name="" id="">
+            <button type="button" class="microfoneKrom" name="btn" id="btn">COMPRAR</button>
+          </div>
+          
+        </div>
+  
+  
+        </div>
+       </div> 
+
+      </main>
+
+
+
+
+        <!-- SCRIPTS BOOTSTRAP -->
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+  integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+  crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+  integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+  crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+  integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+  crossorigin="anonymous"></script>
+
+
+  <!-- SCRIPT SITE -->
+  <script src="src/js/carrinho.js"></script>
+<script src="src/js/script.js"></script>
+
+</body>
+
+</html>
