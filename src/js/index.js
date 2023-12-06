@@ -1,26 +1,26 @@
 
-// //Inserir dados
-// localStorage.setItem("produto", "mouse Red Dragon");
+//Inserir dados
+localStorage.setItem("produto", "mouse Red Dragon");
 
-// // restart sem perder os dados
+// restart sem perder os dados
 
 
-// // resgatar item
-// const produto = localStorage.getItem("produto");
+// resgatar item
+const produto = localStorage.getItem("produto");
 
-// console.log(produto);
+console.log(produto);
 
-// // resgate de item que não existe
-// const lastName = localStorage.getItem("lastname");
+// resgate de item que não existe
+const lastName = localStorage.getItem("lastname");
 
-// console.log(lastName);
+console.log(lastName);
 
-// if(!lastName){
-//   console.log("sem sobrenome");
-// }
+if(!lastName){
+  console.log("sem sobrenome");
+}
 
-// // remover item 
-// localStorage.removeItem("produto");
+// remover item 
+localStorage.removeItem("produto");
 
-// // limpar todos os itens
-// localStorage.clear();
+// limpar todos os itens
+localStorage.clear();
