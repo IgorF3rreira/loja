@@ -52,10 +52,17 @@ nav a:hover{
 }
 
 #carrinhoA{
+    
     float: right;
     position: relative;
     bottom: 10px;
     right: 10px;
+}
+i{
+    color: white;
+}
+i:hover{
+    color: black;
 }
 
 main{
@@ -83,7 +90,7 @@ h5 p{
 
 #produto{
     
-    border: 1px solid black;
+    box-shadow: 5px 2px 5px 1px black;
     width: 170px;
     border-radius: 10px;
     background-color: white;
@@ -169,31 +176,6 @@ h5 p{
         margin-bottom: 10px;
     }
 }
-@media screen and (min-width:1050px) {
-    #divRow{
-        margin-left:8%;
-        margin-bottom: 10px;
-    }
-}
-@media screen and (min-width:1150px) {
-    #divRow{
-        margin-left:10%;
-        margin-bottom: 10px;
-    }
-}
-@media screen and (min-width:1310px) {
-    #divRow{
-        margin-left:15%;
-        margin-bottom: 10px;
-    }
-}
-@media screen and (min-width:1480px) {
-    #divRow{
-        margin-left:17%;
-        margin-bottom: 10px;
-    }
-}
-
 
 
 
