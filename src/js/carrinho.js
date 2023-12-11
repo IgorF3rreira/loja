@@ -21,6 +21,17 @@ $(document).ready(function () {
     let valorTecladoViper = 200.00;
     let valorTecladoAoc = 279.90;
 
+    //MOUSE VALORES
+    let valorMouseAoc = 149.99;
+    let valorMouseLogitech = 249.99;
+    let valorMouseLogitechRosa = 779.99;
+    let valorMouseFallen = 399.99;
+    let valorMouseSteel = 199.99;
+    let valorMouseCorsair = 399.80;
+    let valorMouseAcer = 109.99;
+    let valorMouseBenQ = 479.90;
+
+
 
 
 
@@ -41,7 +52,7 @@ $(document).ready(function () {
         console.log(produto + ' ee ' + ppp);
 
         alert("Produto adicionado ao carrinho")
-        location.reload("index.html")
+        location.reload()
     }
 
     //BUTTONS HOME
@@ -102,6 +113,39 @@ $(document).ready(function () {
         adicionaAoCarrinho('tecladoAoc');
     })
 
+    //BUTTON MOUSES
+
+    $('button.mouseAoc').click(function () {
+        adicionaAoCarrinho('mouseAoc');
+    })
+
+    $('button.mouseLogitech').click(function () {
+        adicionaAoCarrinho('mouseLogitech');
+    })
+
+    $('button.mouseLogitechRosa').click(function () {
+        adicionaAoCarrinho('mouseLogitechRosa');
+    })
+
+    $('button.mouseFallen').click(function () {
+        adicionaAoCarrinho('mouseFallen');
+    })
+
+    $('button.mouseSteel').click(function () {
+        adicionaAoCarrinho('mouseSteel');
+    })
+
+    $('button.mouseCorsair').click(function () {
+        adicionaAoCarrinho('mouseCorsair');
+    })
+
+    $('button.mouseAcer').click(function () {
+        adicionaAoCarrinho('mouseAcer');
+    })
+
+    $('button.mouseBenQ').click(function () {
+        adicionaAoCarrinho('mouseBenQ');
+    })
 
 
     // Remover um Produto do Carrinho
@@ -167,6 +211,40 @@ $(document).ready(function () {
     })
 
 
+    //REMOVE MOUSES
+
+    $('.removeMouseAoc').click(function () {
+        removeProduto('mouseAoc');
+    })
+
+    $('.removeMouseLogitech').click(function () {
+        removeProduto('mouseLogitech');
+    })
+
+    $('.removeMouseLogitechRosa').click(function () {
+        removeProduto('mouseLogitechRosa');
+    })
+
+    $('.removeMouseFallen').click(function () {
+        removeProduto('mouseFallen');
+    })
+
+    $('.removeMouseSteel').click(function () {
+        removeProduto('mouseSteel');
+    })
+
+    $('.removeMouseCorsair').click(function () {
+        removeProduto('mouseCorsair');
+    })
+
+    $('.removeMouseAcer').click(function () {
+        removeProduto('mouseAcer');
+    })
+
+    $('.removeMouseBenQ').click(function () {
+        removeProduto('mouseBenQ');
+    })
+
 
 
     // Criar a Tabela
@@ -175,7 +253,7 @@ $(document).ready(function () {
         try {
             let tabelaDoCarrinho = document.getElementById('tabelaCarrinho');
 
-            //PASSAR NOMES QUANTIDADE E VALORES TOTAL PRA TABELA NA ABA HOME
+            //PASSAR NOMES, QUANTIDADE E VALORES TOTAL PRA TABELA NA ABA HOME
 
             var mouseRed = localStorage.getItem('mouseRed');
             var mouseHyper = localStorage.getItem('mouseHyper');
@@ -196,7 +274,7 @@ $(document).ready(function () {
             var totalMicrofoneKrom = microfoneKrom * valorMicrofoneKrom;
 
 
-            //PASSAR NOMES QUANTIDADE E VALORES TOTAL PRA TABELA NA ABA TECLADO
+            //PASSAR NOMES ,QUANTIDADE E VALORES TOTAL PRA TABELA NA ABA TECLADO
 
             var tecladoBrx = localStorage.getItem('tecladoBrx');
             var tecladoMulti = localStorage.getItem('tecladoMulti');
@@ -211,6 +289,26 @@ $(document).ready(function () {
             var totalTecladoCooler = tecladoCooler * valorTecladoCooler;
             var totalTecladoViper = tecladoViper * valorTecladoViper;
             var totalTecladoAoc = tecladoAoc * valorTecladoAoc;
+
+            //PASSAR NOMES ,QUANTIDADE E VALORES TOTAL PRA TABELA NA ABA MOUSE
+
+            var mouseAoc = localStorage.getItem('mouseAoc')
+            var mouseLogitech = localStorage.getItem('mouseLogitech');
+            var mouseLogitechRosa = localStorage.getItem('mouseLogitechRosa');
+            var mouseFallen = localStorage.getItem('mouseFallen');
+            var mouseSteel = localStorage.getItem('mouseSteel');
+            var mouseCorsair = localStorage.getItem('mouseCorsair');
+            var mouseAcer = localStorage.getItem('mouseAcer');
+            var mouseBenQ = localStorage.getItem('mouseBenQ');
+
+            var totalMouseAoc = mouseAoc * valorMouseAoc;
+            var totalMouseLogitech = mouseLogitech * valorMouseLogitech;
+            var totalMouseLogitechRosa = mouseLogitechRosa * valorMouseLogitechRosa;
+            var totalMouseFallen = mouseFallen * valorMouseFallen;
+            var totalMouseSteel = mouseSteel * valorMouseSteel;
+            var totalMouseCorsair = mouseCorsair * valorMouseCorsair;
+            var totalMouseAcer = mouseAcer * valorMouseAcer;
+            var totalMouseBenQ = mouseBenQ * valorMouseBenQ;
 
 
 
@@ -228,8 +326,16 @@ $(document).ready(function () {
                 totalTecladoLogitech +
                 totalTecladoCooler +
                 totalTecladoViper +
-                totalTecladoAoc;
-
+                totalTecladoAoc +
+                //MOUSES
+                totalMouseAoc +
+                totalMouseLogitech +
+                totalMouseLogitechRosa +
+                totalMouseFallen +
+                totalMouseSteel +
+                totalMouseCorsair +
+                totalMouseAcer +
+                totalMouseBenQ;
 
             totalAPagar = totalAPagar < 0 ? 0 : totalAPagar;
 
@@ -354,7 +460,7 @@ $(document).ready(function () {
                                     </tr>            
                                 `;
             }
-                //////////////////////////////////////////////////
+            //////////////////////////////////////////////////
             //MONTAR TABELA COM PRODUTOS DA ABA TECLADOS
 
             //tecladoBrx
@@ -438,6 +544,116 @@ $(document).ready(function () {
 
 
 
+            ////////////////////////////////////////////////////////////////////////
+            // MONTAR TABELA COM PRODUTOS DA TELA MOUSE
+
+            //mouseAoc
+            if (mouseAoc != null && mouseAoc > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                        <tr> 
+                                                            <td>Mouse Gamer AOC</td>
+                                                            <td class="valorMouseAoc"></td>
+                                                            <td>${mouseAoc}</td>
+                                                            <td class="text-center removeMouseAoc"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                            <td>R$${totalMouseAoc.toFixed(2)}</td>
+                                                        </tr>            
+                                                    `;
+            }
+
+            //mouseLogitech
+            if (mouseLogitech != null && mouseLogitech > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Mouse Gamer Logitech</td>
+                                                                    <td class="valorMouseLogitech"></td>
+                                                                    <td>${mouseLogitech}</td>
+                                                                    <td class="text-center removeMouseLogitech"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalMouseLogitech.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }
+
+            //mouseLogitechRosa
+            if (mouseLogitechRosa != null && mouseLogitechRosa > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Mouse Gamer Logitech Sem fio</td>
+                                                                    <td class="valorMouseLogitechRosa"></td>
+                                                                    <td>${mouseLogitechRosa}</td>
+                                                                    <td class="text-center removeMouseLogitechRosa"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalMouseLogitechRosa.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }
+            
+            //mouseFallen
+            if (mouseFallen != null && mouseFallen > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Mouse Gamer Fallen</td>
+                                                                    <td class="valorMouseFallen"></td>
+                                                                    <td>${mouseFallen}</td>
+                                                                    <td class="text-center removeMouseFallen"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalMouseFallen.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }
+
+            //mouseSteel
+            if (mouseSteel != null && mouseSteel > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Mouse Gamer SteelSeries</td>
+                                                                    <td class="valorMouseSteel"></td>
+                                                                    <td>${mouseSteel}</td>
+                                                                    <td class="text-center removeMouseSteel"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalMouseSteel.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }
+
+
+            //mouseCorsair
+            if (mouseCorsair != null && mouseCorsair > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Mouse Gamer Corsair</td>
+                                                                    <td class="valorMouseCorsair"></td>
+                                                                    <td>${mouseCorsair}</td>
+                                                                    <td class="text-center removeMouseCorsair"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalMouseCorsair.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }
+
+            //mouseAcer
+            if (mouseAcer != null && mouseAcer > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Mouse Gamer Acer</td>
+                                                                    <td class="valorMouseAcer"></td>
+                                                                    <td>${mouseAcer}</td>
+                                                                    <td class="text-center removeMouseAcer"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalMouseAcer.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }
+
+            //mouseBenQ
+            if (mouseBenQ != null && mouseBenQ > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Mouse Gamer BenQ </td>
+                                                                    <td class="valorMouseBenQ"></td>
+                                                                    <td>${mouseBenQ}</td>
+                                                                    <td class="text-center removeMouseBenQ"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalMouseBenQ.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }
+          
+
+
 
             // Total Final
             tabelaDoCarrinho.innerHTML += `
@@ -449,8 +665,8 @@ $(document).ready(function () {
 
             valorProdutos();
         } catch (erro) {
-            console.log('ERROOOOOOO');
-            console.log(erro)
+            console.log("ERROOOOOOO");
+            console.log(erro);
         }
     }
 
@@ -476,12 +692,20 @@ $(document).ready(function () {
         $('.valorTecladoViper').html('R$' + valorTecladoViper.toFixed(2))
         $('.valorTecladoAoc').html('R$' + valorTecladoAoc.toFixed(2))
 
-
-
+        //PASSAR OS VALORES DOS PRODUTOS NA TABELA DA ABA TECLADOS
+        $('.valorMouseAoc').html('R$' + valorMouseAoc.toFixed(2))
+        $('.valorMouseLogitech').html('R$' + valorMouseLogitech.toFixed(2))
+        $('.valorMouseLogitechRosa').html('R$' + valorMouseLogitechRosa.toFixed(2))
+        $('.valorMouseFallen').html('R$' + valorMouseFallen.toFixed(2))
+        $('.valorMouseSteel').html('R$' + valorMouseSteel.toFixed(2))
+        $('.valorMouseCorsair').html('R$' + valorMouseCorsair.toFixed(2))
+        $('.valorMouseAcer').html('R$' + valorMouseAcer.toFixed(2))
+        $('.valorMouseBenQ').html('R$' + valorMouseBenQ.toFixed(2))
+        
     }
 
 
 
-    
+
 
 });
