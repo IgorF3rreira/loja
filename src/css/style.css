@@ -173,6 +173,9 @@ h5 p{
         display: inline-block;
         margin-bottom: 10px;
     }
+    #ajuste{
+        width: 62%;
+    }
 }
 @media screen and (max-width:770px) {
     #divRow{

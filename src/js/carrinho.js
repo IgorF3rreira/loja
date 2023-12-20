@@ -31,6 +31,15 @@ $(document).ready(function () {
     let valorMouseAcer = 109.99;
     let valorMouseBenQ = 479.90;
 
+    //PROCESSADORES VALORES
+    let valorProcessadorAmd7 = 1247.99;
+    let valorProcessadorAmd5 = 806.22;
+    let valorProcessadorI5 = 668.88;
+    let valorProcessadorI9 = 2428.99;
+    let valorProcessadorAmd9 = 5222.32;
+    let valorProcessadorI7 = 1719.48;
+    let valorProcessadorI5Ger10 = 1129.40;
+    let valorProcessadorAmd3 = 439.90;
 
 
 
@@ -147,6 +156,40 @@ $(document).ready(function () {
         adicionaAoCarrinho('mouseBenQ');
     })
 
+        //BUTTONS PROCESSADORES
+
+    $('button.processadorAmd7').click(function(){
+        adicionaAoCarrinho('processadorAmd7');
+    })
+
+    $('button.processadorAmd5').click(function(){
+        adicionaAoCarrinho('processadorAmd5');
+    })
+
+    $('button.processadorI5').click(function(){
+        adicionaAoCarrinho('processadorI5');
+    })
+
+    $('button.processadorI9').click(function(){
+        adicionaAoCarrinho('processadorI9');
+    })
+
+    $('button.processadorAmd9').click(function(){
+        adicionaAoCarrinho('processadorAmd9');
+    })
+
+    $('button.processadorI7').click(function(){
+        adicionaAoCarrinho('processadorI7');
+    })
+
+    $('button.processadorI5Ger10').click(function(){
+        adicionaAoCarrinho('processadorI5Ger10');
+    })
+
+    $('button.processadorAmd3').click(function(){
+        adicionaAoCarrinho('processadorAmd3');
+    })
+
 
     // Remover um Produto do Carrinho
     function removeProduto(produto) {
@@ -245,8 +288,42 @@ $(document).ready(function () {
         removeProduto('mouseBenQ');
     })
 
+    //REMOVE PROCESSADORES
 
+    $('.removeProcessadorAmd7').click(function () {
+        removeProduto('processadorAmd7');
+    })
 
+    $('.removeProcessadorAmd5').click(function () {
+        removeProduto('processadorAmd5');
+    })
+
+    $('.removeProcessadorI5').click(function () {
+        removeProduto('processadorI5');
+    })
+
+    $('.removeProcessadorI9').click(function () {
+        removeProduto('processadorI9');
+    })
+
+    $('.removeProcessadorAmd9').click(function () {
+        removeProduto('processadorAmd9');
+    })
+
+    
+    $('.removeProcessadorI7').click(function () {
+        removeProduto('processadorI7');
+    })
+
+    
+    $('.removeProcessadorI5Ger10').click(function () {
+        removeProduto('processadorI5Ger10');
+    })
+
+    
+    $('.removeProcessadorAmd3').click(function () {
+        removeProduto('processadorAmd3');
+    })
     // Criar a Tabela
     function criaTabela() {
         // Carregar Tabela de Carrinho
@@ -310,6 +387,26 @@ $(document).ready(function () {
             var totalMouseAcer = mouseAcer * valorMouseAcer;
             var totalMouseBenQ = mouseBenQ * valorMouseBenQ;
 
+              //PASSAR NOMES ,QUANTIDADE E VALORES TOTAL PRA TABELA NA ABA PROCESSSADORES
+
+            var processadorAmd7 = localStorage.getItem('processadorAmd7');
+            var processadorAmd5 = localStorage.getItem('processadorAmd5');
+            var processadorI5 = localStorage.getItem('processadorI5');
+            var processadorI9 = localStorage.getItem('processadorI9');
+            var processadorAmd9 = localStorage.getItem('processadorAmd9');
+            var processadorI7 = localStorage.getItem('processadorI7');
+            var processadorI5Ger10 = localStorage.getItem('processadorI5Ger10');
+            var processadorAmd3 = localStorage.getItem('processadorAmd3');
+
+            var totalProcessadorAmd7 = processadorAmd7 * valorProcessadorAmd7;
+            var totalProcessadorAmd5 = processadorAmd5 * valorProcessadorAmd5;
+            var totalProcessadorI5 = processadorI5 * valorProcessadorI5;
+            var totalProcessadorI9 = processadorI9 * valorProcessadorI9;
+            var totalProcessadorAmd9 = processadorAmd9 * valorProcessadorAmd9;
+            var totalProcessadorI7 = processadorI7 * valorProcessadorI7;
+            var totalProcessadorI5Ger10 = processadorI5Ger10 * valorProcessadorI5Ger10;
+            var totalProcessadorAmd3 = processadorAmd3 * valorProcessadorAmd3;
+            
 
 
             var totalAPagar = totalMouseRed +
@@ -335,7 +432,16 @@ $(document).ready(function () {
                 totalMouseSteel +
                 totalMouseCorsair +
                 totalMouseAcer +
-                totalMouseBenQ;
+                totalMouseBenQ + 
+                //PROCESSADORES
+                totalProcessadorAmd7 + 
+                totalProcessadorAmd5 + 
+                totalProcessadorI5 + 
+                totalProcessadorI9 + 
+                totalProcessadorAmd9 + 
+                totalProcessadorI7 + 
+                totalProcessadorI5Ger10 + 
+                totalProcessadorAmd3;
 
             totalAPagar = totalAPagar < 0 ? 0 : totalAPagar;
 
@@ -651,7 +757,115 @@ $(document).ready(function () {
                                                                 </tr>            
                                                             `;
             }
+            
+
+                //MONTAR TABELA COM PRODUTOS DA TELA PROCESSADORES
+
+            //ProcessadorAmd7
+            if (processadorAmd7 != null && processadorAmd7 > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Processador AMD Ryzen 7 </td>
+                                                                    <td class="valorProcessadorAmd7"></td>
+                                                                    <td>${processadorAmd7}</td>
+                                                                    <td class="text-center removeProcessadorAmd7"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalProcessadorAmd7.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }
+
+            
+      //ProcessadorAmd5
+      if (processadorAmd5 != null && processadorAmd5 > 0) {
+        tabelaDoCarrinho.innerHTML += `
+                                                        <tr> 
+                                                            <td>Processador AMD Ryzen 5 </td>
+                                                            <td class="valorProcessadorAmd5"></td>
+                                                            <td>${processadorAmd5}</td>
+                                                            <td class="text-center removeProcessadorAmd5"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                            <td>R$${totalProcessadorAmd5.toFixed(2)}</td>
+                                                        </tr>            
+                                                    `;
+    }
+
+          //ProcessadorI5
+          if (processadorI5 != null && processadorI5 > 0) {
+            tabelaDoCarrinho.innerHTML += `
+                                                            <tr> 
+                                                                <td>Processador Intel Core i5</td>
+                                                                <td class="valorProcessadorI5"></td>
+                                                                <td>${processadorI5}</td>
+                                                                <td class="text-center removeProcessadorI5"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                <td>R$${totalProcessadorI5.toFixed(2)}</td>
+                                                            </tr>            
+                                                        `;
+        }
+
+            //ProcessadorI9
+            if (processadorI9 != null && processadorI9 > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Processador Intel Core i9</td>
+                                                                    <td class="valorProcessadorI9"></td>
+                                                                    <td>${processadorI9}</td>
+                                                                    <td class="text-center removeProcessadorI9"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalProcessadorI9.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }
           
+      //ProcessadorAmd9
+      if (processadorAmd9 != null && processadorAmd9 > 0) {
+        tabelaDoCarrinho.innerHTML += `
+                                                        <tr> 
+                                                            <td>Processador AMD Ryzen 9 </td>
+                                                            <td class="valorProcessadorAmd9"></td>
+                                                            <td>${processadorAmd9}</td>
+                                                            <td class="text-center removeProcessadorAmd9"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                            <td>R$${totalProcessadorAmd9.toFixed(2)}</td>
+                                                        </tr>            
+                                                    `;
+    }
+
+            //ProcessadorI7
+            if (processadorI7 != null && processadorI7 > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Processador Intel Core i7</td>
+                                                                    <td class="valorProcessadorI7"></td>
+                                                                    <td>${processadorI7}</td>
+                                                                    <td class="text-center removeProcessadorI7"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalProcessadorI7.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }
+
+            //ProcessadorI5 Geração 10
+            if (processadorI5Ger10 != null && processadorI5Ger10 > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Processador Intel Core i5 10ºGeração</td>
+                                                                    <td class="valorProcessadorI5Ger10"></td>
+                                                                    <td>${processadorI5Ger10}</td>
+                                                                    <td class="text-center removeProcessadorI5Ger10"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalProcessadorI5Ger10.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }
+
+            //ProcessadorAmd3
+            if (processadorAmd3 != null && processadorAmd3 > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Processador AMD Ryzen 3 </td>
+                                                                    <td class="valorProcessadorAmd3"></td>
+                                                                    <td>${processadorAmd3}</td>
+                                                                    <td class="text-center removeProcessadorAmd3"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalProcessadorAmd3.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }       
+            
 
 
 
@@ -701,6 +915,16 @@ $(document).ready(function () {
         $('.valorMouseCorsair').html('R$' + valorMouseCorsair.toFixed(2))
         $('.valorMouseAcer').html('R$' + valorMouseAcer.toFixed(2))
         $('.valorMouseBenQ').html('R$' + valorMouseBenQ.toFixed(2))
+        
+        //PASSAR OS VALORES DOS PRODUTOS NA TABELA DA ABA PROCESSADORES
+        $('valorProcessadorAmd7').html('R$' + valorProcessadorAmd7.toFixed(2));
+        $('valorProcessadorAmd5').html('R$' + valorProcessadorAmd5.toFixed(2));
+        $('valorProcessadorI5').html('R$' + valorProcessadorI5.toFixed(2));
+        $('valorProcessadorI9').html('R$' + valorProcessadorI9.toFixed(2));
+        $('valorProcessadorAmd9').html('R$' + valorProcessadorAmd9.toFixed(2));
+        $('valorProcessadorI7').html('R$' + valorProcessadorI7.toFixed(2));
+        $('valorProcessadorI5Ger10').html('R$' + valorProcessadorI5Ger10.toFixed(2));
+        $('valorProcessadorAmd3').html('R$' + valorProcessadorAmd3.toFixed(2));
         
     }
 
