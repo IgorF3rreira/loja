@@ -42,6 +42,18 @@ $(document).ready(function () {
     let valorProcessadorAmd3 = 439.90;
 
 
+    //MONITORES VALORES
+
+    let valorMonitorUltragear = 1473.67;
+    let valorMonitorSamsung = 519.99;
+    let valorMonitorConcordia = 999.90;
+    let valorMonitorAsus = 999.99;
+    let valorMonitorAoc = 999.99;
+    let valorMonitorAcer = 849.99;
+    let valorMonitorHusky = 1899.99;
+    let valorMonitorLg = 520.91;
+
+
 
 
     // Carregar HTML dinâmico ------------------------------------------------------------------------
@@ -190,6 +202,43 @@ $(document).ready(function () {
         adicionaAoCarrinho('processadorAmd3');
     })
 
+    //BUTTONS MONITORES
+
+    $('button.monitorUltragear').click(function(){
+        adicionaAoCarrinho('monitorUltragear');
+    })
+
+    $('button.monitorSamsung').click(function(){
+        adicionaAoCarrinho('monitorSamsung');
+    })
+
+    $('button.monitorConcordia').click(function(){
+        adicionaAoCarrinho('monitorConcordia');
+    })
+
+    $('button.monitorAsus').click(function(){
+        adicionaAoCarrinho('monitorAsus');
+    })
+
+    $('button.monitorAoc').click(function(){
+        adicionaAoCarrinho('monitorAoc');
+    })
+
+    $('button.monitorAcer').click(function(){
+        adicionaAoCarrinho('monitorAcer');
+    })
+
+    $('button.monitorHusky').click(function(){
+        adicionaAoCarrinho('monitorHusky');
+    })
+
+    $('button.monitorLg').click(function(){
+        adicionaAoCarrinho('monitorLg');
+    })
+
+
+
+
 
     // Remover um Produto do Carrinho
     function removeProduto(produto) {
@@ -324,6 +373,45 @@ $(document).ready(function () {
     $('.removeProcessadorAmd3').click(function () {
         removeProduto('processadorAmd3');
     })
+
+    //REMOVE MONITORES
+
+    $('.removeMonitorUltragear').click(function () {
+        removeProduto('monitorUltragear');
+    })
+
+    $('.removeMonitorSamsung').click(function () {
+        removeProduto('monitorSamsung');
+    })
+
+    $('.removeMonitorConcordia').click(function () {
+        removeProduto('monitorConcordia');
+    })
+
+    $('.removeMonitorAsus').click(function () {
+        removeProduto('monitorAsus');
+    })
+
+    $('.removeMonitorAoc').click(function () {
+        removeProduto('monitorAoc');
+    })
+
+    $('.removeMonitorAcer').click(function () {
+        removeProduto('monitorAcer');
+    })
+
+    $('.removeMonitorHusky').click(function () {
+        removeProduto('monitorHusky');
+    })
+
+    
+    $('.removeMonitorLg').click(function () {
+        removeProduto('monitorLg');
+    })
+
+
+
+
     // Criar a Tabela
     function criaTabela() {
         // Carregar Tabela de Carrinho
@@ -407,9 +495,31 @@ $(document).ready(function () {
             var totalProcessadorI5Ger10 = processadorI5Ger10 * valorProcessadorI5Ger10;
             var totalProcessadorAmd3 = processadorAmd3 * valorProcessadorAmd3;
             
+              //PASSAR NOMES ,QUANTIDADE E VALORES TOTAL PRA TABELA NA ABA MONITORES
+
+            var monitorUltragear = localStorage.getItem('monitorUltragear');
+            var monitorSamsung = localStorage.getItem('monitorSamsung');
+            var monitorConcordia = localStorage.getItem('monitorConcordia');
+            var monitorAsus = localStorage.getItem('monitorAsus');
+            var monitorAoc = localStorage.getItem('monitorAoc');
+            var monitorAcer = localStorage.getItem('monitorAcer');
+            var monitorHusky = localStorage.getItem('monitorHusky');
+            var monitorLg = localStorage.getItem('monitorLg');
+
+            var totalMonitorUltragear = monitorUltragear * valorMonitorUltragear;
+            var totalMonitorSamsung = monitorSamsung * valorMonitorSamsung;
+            var totalMonitorConcordia = monitorConcordia * valorMonitorConcordia;
+            var totalMonitorAsus = monitorAsus * valorMonitorAsus;
+            var totalMonitorAoc = monitorAoc * valorMonitorAoc;
+            var totalMonitorAcer = monitorAcer * valorMonitorAcer;
+            var totalMonitorHusky = monitorHusky * valorMonitorHusky;
+            var totalMonitorLg = monitorLg * valorMonitorLg;
 
 
-            var totalAPagar = totalMouseRed +
+
+
+
+            let  totalCarrinho = totalMouseRed +
                 totalMouseHyper +
                 totalTecladoHyper +
                 totalTecladoHusky +
@@ -441,9 +551,18 @@ $(document).ready(function () {
                 totalProcessadorAmd9 + 
                 totalProcessadorI7 + 
                 totalProcessadorI5Ger10 + 
-                totalProcessadorAmd3;
+                totalProcessadorAmd3 +
+                //MONITORES
+                totalMonitorUltragear +
+                totalMonitorSamsung +
+                totalMonitorConcordia + 
+                totalMonitorAsus +
+                totalMonitorAoc +
+                totalMonitorAcer +
+                totalMonitorHusky +
+                totalMonitorLg;
 
-            totalAPagar = totalAPagar < 0 ? 0 : totalAPagar;
+                totalCarrinho = totalCarrinho < 0 ? 0 : totalCarrinho;
 
             // Montar a Tabela
 
@@ -866,6 +985,111 @@ $(document).ready(function () {
                                                             `;
             }       
             
+            //  //MONTAR TABELA COM PRODUTOS DA TELA PROCESSADORES
+
+             //Monitor Ultragear
+             if (monitorUltragear != null && monitorUltragear > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Monitor Gamer LG UltraGear </td>
+                                                                    <td class="valorMonitorUltragear"></td>
+                                                                    <td>${monitorUltragear}</td>
+                                                                    <td class="text-center removeMonitorUltragear"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalMonitorUltragear.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }       
+
+             //Monitor Samsung
+             if (monitorSamsung != null && monitorSamsung > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Monitor Gamer Samsung </td>
+                                                                    <td class="valorMonitorSamsung"></td>
+                                                                    <td>${monitorSamsung}</td>
+                                                                    <td class="text-center removeMonitorSamsung"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalMonitorSamsung.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }                
+                       
+             //Monitor Concordia
+             if (monitorConcordia != null && monitorConcordia > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Monitor Concórdia Gamer  </td>
+                                                                    <td class="valorMonitorConcordia"></td>
+                                                                    <td>${monitorConcordia}</td>
+                                                                    <td class="text-center removeMonitorConcordia"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalMonitorConcordia.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }                
+                      
+             //Monitor ASUS
+             if (monitorAsus != null && monitorAsus > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Monitor Gamer Asus  </td>
+                                                                    <td class="valorMonitorAsus"></td>
+                                                                    <td>${monitorAsus}</td>
+                                                                    <td class="text-center removeMonitorAsus"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalMonitorAsus.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }    
+
+             //Monitor Aoc
+             if (monitorAoc != null && monitorAoc > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Monitor Gamer AOC </td>
+                                                                    <td class="valorMonitorAoc"></td>
+                                                                    <td>${monitorAoc}</td>
+                                                                    <td class="text-center removeMonitorAoc"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalMonitorAoc.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }              
+            
+             //Monitor Acer
+             if (monitorAcer != null && monitorAcer > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Monitor Gamer Acer</td>
+                                                                    <td class="valorMonitorAcer"></td>
+                                                                    <td>${monitorAcer}</td>
+                                                                    <td class="text-center removeMonitorAcer"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalMonitorAcer.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }                          
+
+             //Monitor Husky
+             if (monitorHusky != null && monitorHusky > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Monitor Gamer Husky </td>
+                                                                    <td class="valorMonitorHusky"></td>
+                                                                    <td>${monitorHusky}</td>
+                                                                    <td class="text-center removeMonitorHusky"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalMonitorHusky.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }     
+
+             //Monitor Lg
+             if (monitorLg != null && monitorLg > 0) {
+                tabelaDoCarrinho.innerHTML += `
+                                                                <tr> 
+                                                                    <td>Monitor LG  </td>
+                                                                    <td class="valorMonitorLg"></td>
+                                                                    <td>${monitorLg}</td>
+                                                                    <td class="text-center removeMonitorLg"><i class="fa-solid fa-trash text-danger"></i></td>
+                                                                    <td>R$${totalMonitorLg.toFixed(2)}</td>
+                                                                </tr>            
+                                                            `;
+            }     
 
 
 
@@ -873,7 +1097,7 @@ $(document).ready(function () {
             tabelaDoCarrinho.innerHTML += `
                 <tr>
                     <th colspan="4">Total a Pagar</th>
-                    <td>R$${totalAPagar.toFixed(2)}</td>
+                    <td>R$${ totalCarrinho.toFixed(2)}</td>
                 </tr>
             `;
 
@@ -887,6 +1111,8 @@ $(document).ready(function () {
 
     // Colocar Valor do Produto onde for Preciso
     function valorProdutos() {
+
+       
         //PASSAR OS VALORES DOS PRODUTOS NA TABELA DA ABA HOME
 
         $('.valorMouseRed').html('R$' + valorMouseRed.toFixed(2))
@@ -917,14 +1143,25 @@ $(document).ready(function () {
         $('.valorMouseBenQ').html('R$' + valorMouseBenQ.toFixed(2))
         
         //PASSAR OS VALORES DOS PRODUTOS NA TABELA DA ABA PROCESSADORES
-        $('valorProcessadorAmd7').html('R$' + valorProcessadorAmd7.toFixed(2));
-        $('valorProcessadorAmd5').html('R$' + valorProcessadorAmd5.toFixed(2));
-        $('valorProcessadorI5').html('R$' + valorProcessadorI5.toFixed(2));
-        $('valorProcessadorI9').html('R$' + valorProcessadorI9.toFixed(2));
-        $('valorProcessadorAmd9').html('R$' + valorProcessadorAmd9.toFixed(2));
-        $('valorProcessadorI7').html('R$' + valorProcessadorI7.toFixed(2));
-        $('valorProcessadorI5Ger10').html('R$' + valorProcessadorI5Ger10.toFixed(2));
-        $('valorProcessadorAmd3').html('R$' + valorProcessadorAmd3.toFixed(2));
+        $('valorProcessadorAmd7').html('R$' + valorProcessadorAmd7.toFixed(2))
+        $('valorProcessadorAmd5').html('R$' + valorProcessadorAmd5.toFixed(2))
+        $('valorProcessadorI5').html('R$' + valorProcessadorI5.toFixed(2))
+        $('valorProcessadorI9').html('R$' + valorProcessadorI9.toFixed(2))
+        $('valorProcessadorAmd9').html('R$' + valorProcessadorAmd9.toFixed(2))
+        $('valorProcessadorI7').html('R$' + valorProcessadorI7.toFixed(2))
+        $('valorProcessadorI5Ger10').html('R$' + valorProcessadorI5Ger10.toFixed(2))
+        $('valorProcessadorAmd3').html('R$' + valorProcessadorAmd3.toFixed(2))
+        
+
+        //  //PASSAR OS VALORES DOS PRODUTOS NA TABELA DA ABA MONITORES
+         $('valorMonitorUltragear').html('R$' + valorMonitorUltragear.toFixed(2))
+         $('valorMonitorSamsung').html('R$' + valorMonitorSamsung.toFixed(2))
+         $('valorMonitorConcordia').html('R$' + valorMonitorConcordia.toFixed(2))
+         $('valorMonitorAsus').html('R$' + valorMonitorAsus.toFixed(2))
+         $('valorMonitorAoc').html('R$' + valorMonitorAoc.toFixed(2))
+         $('valorMonitorAcer').html('R$' + valorMonitorAcer.toFixed(2))
+         $('valorMonitorHusky').html('R$' + valorMonitorHusky.toFixed(2))
+         $('valorMonitorLg').html('R$' + valorMonitorLg.toFixed(2))
         
     }
 
